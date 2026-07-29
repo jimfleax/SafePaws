@@ -38,3 +38,11 @@ export async function insertComment(db, postId, { content, creatorId }) {
   comment._id = insertedId;
   return comment;
 }
+
+export async function deleteCommentById(db, id) {
+  return db.collection('comments').deleteOne({ _id: new ObjectId(id) });
+}
+
+export async function findCommentById(db, id) {
+  return db.collection('comments').findOne({ _id: new ObjectId(id) });
+}

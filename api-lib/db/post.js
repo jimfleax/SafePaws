@@ -59,3 +59,10 @@ export async function insertPost(db, { content, creatorId }) {
   post._id = insertedId;
   return post;
 }
+
+export async function deletePostById(db, id) {
+  // Cascade delete all comments for this post
+  await db.collection('comments').deleteMany({ postId: new ObjectId(id) });
+  // Delete the post
+  return db.collection('posts').deleteOne({ _id: new ObjectId(id) });
+}

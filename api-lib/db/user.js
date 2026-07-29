@@ -102,3 +102,13 @@ export function dbProjectionUsers(prefix = '') {
     [`${prefix}emailVerified`]: 0,
   };
 }
+
+export async function deleteUserById(db, id) {
+  const userId = new ObjectId(id);
+  // Cascade delete all tokens, posts, and comments created by this user
+  await db.collection('tokens').deleteMany({ creatorId: userId });
+  await db.collection('comments').deleteMany({ creatorId: userId });
+  await db.collection('posts').deleteMany({ creatorId: userId });
+  // Delete the user
+  return db.collection('users').deleteOne({ _id: userId });
+}

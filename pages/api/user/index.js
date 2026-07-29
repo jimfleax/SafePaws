@@ -1,5 +1,5 @@
 import { ValidateProps } from '@/api-lib/constants';
-import { findUserByUsername, updateUserById } from '@/api-lib/db';
+import { findUserByUsername, updateUserById, deleteUserById } from '@/api-lib/db';
 import { auths, validateBody } from '@/api-lib/middlewares';
 import { getMongoDb } from '@/api-lib/mongodb';
 import { ncOpts } from '@/api-lib/nc';
@@ -45,7 +45,7 @@ handler.patch(
   }),
   async (req, res) => {
     if (!req.user) {
-      req.status(401).end();
+      res.status(401).end();
       return;
     }
 
@@ -87,6 +87,18 @@ handler.patch(
     res.json({ user });
   }
 );
+
+handler.delete(async (req, res) => {
+  if (!req.user) {
+    res.status(401).end();
+    return;
+  }
+  const db = await getMongoDb();
+  await deleteUserById(db, req.user._id);
+  await req.session.destroy();
+  res.status(204).end();
+});
+
 
 export const config = {
   api: {
