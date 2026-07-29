@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-mongodb-app",
+  "name": "SafePaws",
   "version": "1.0.0",
   "description": "Full fledged app made with Next.JS and MongoDB",
   "main": "index.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoangvvo/nextjs-mongodb-app.git"
+    "url": "git+https://github.com/hoangvvo/SafePaws.git"
   },
   "author": "Hoang Vo (https://hoangvvo.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hoangvvo/nextjs-mongodb-app/issues"
+    "url": "https://github.com/hoangvvo/SafePaws/issues"
   },
-  "homepage": "https://github.com/hoangvvo/nextjs-mongodb-app#readme",
+  "homepage": "https://github.com/hoangvvo/SafePaws#readme",
   "dependencies": {
     "@lukeed/ms": "^2.0.0",
     "ajv": "^8.11.0",

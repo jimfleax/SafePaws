@@ -1,10 +1,10 @@
-# Contribute to nextjs-mongodb-app
+# Contribute to SafePaws
 
-:+1::tada: Thank you for being here. It is people like you that make `nextjs-mongodb-app` great and help shape a better open-source community.
+:+1::tada: Thank you for being here. It is people like you that make `SafePaws` great and help shape a better open-source community.
 
 Following this guideline improves communication and organization, which helps save your and other developers' times and effort in future development.
 
-## What `nextjs-mongodb-app` is looking for
+## What `SafePaws` is looking for
 
 I welcome all contributions from the community. There are many ways to contribute:
 
@@ -45,7 +45,7 @@ The steps to submit a PR are:
 
 ### Javascript style
 
-`nextjs-mongodb-app` follows [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). Please run `npm run lint` and fix any linting warnings.
+`SafePaws` follows [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript). Please run `npm run lint` and fix any linting warnings.
 
 ### Commit message
 

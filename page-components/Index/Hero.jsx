@@ -21,7 +21,7 @@ const Hero = () => {
           <Spacer axis="horizontal" size={1} />
           <Container>
             <ButtonLink
-              href="https://github.com/hoangvvo/nextjs-mongodb-app"
+              href="https://github.com/hoangvvo/SafePaws"
               type="secondary"
               className={styles.button}
             >
