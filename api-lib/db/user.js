@@ -90,9 +90,10 @@ export async function updateUserPasswordByOldPassword(
 
 export async function UNSAFE_updateUserPassword(db, id, newPassword) {
   const password = await bcrypt.hash(newPassword, 10);
-  await db
+  const result = await db
     .collection('users')
     .updateOne({ _id: new ObjectId(id) }, { $set: { password } });
+  return result.modifiedCount === 1;
 }
 
 export function dbProjectionUsers(prefix = '') {
@@ -110,5 +111,6 @@ export async function deleteUserById(db, id) {
   await db.collection('comments').deleteMany({ creatorId: userId });
   await db.collection('posts').deleteMany({ creatorId: userId });
   // Delete the user
-  return db.collection('users').deleteOne({ _id: userId });
+  const result = await db.collection('users').deleteOne({ _id: userId });
+  return result.deletedCount === 1;
 }

@@ -1,0 +1,35 @@
+{
+  "status": "initialized",
+  "current_phase": 1,
+  "phases": [
+    {
+      "id": 1,
+      "objective": "Role-Based Access Control (RBAC) Foundation: Add 'role' to ValidateProps.user in api-lib/constants.js. Update insertUser in api-lib/db/user.js to default to 'citizen' and expose role in dbProjectionUsers().",
+      "status": "pending",
+      "verification_status": "not_started",
+      "recovery_attempts": 0
+    },
+    {
+      "id": 2,
+      "objective": "Geospatial Data Structures & Validation: Replace ValidateProps.post with ValidateProps.alert in api-lib/constants.js containing status, species, breed, description, contactInfo, location (GeoJSON Point), and photos (Base64 array).",
+      "status": "pending",
+      "verification_status": "not_started",
+      "recovery_attempts": 0
+    },
+    {
+      "id": 3,
+      "objective": "Database Layer Transformation: Create api-lib/db/alert.js with geospatial query findAlerts using $geoNear, insertAlert, and deleteAlertById with cascading deletes to comments. Delete api-lib/db/post.js and update api-lib/db/index.js to export alert.",
+      "status": "pending",
+      "verification_status": "not_started",
+      "recovery_attempts": 0
+    },
+    {
+      "id": 4,
+      "objective": "API Routes & Dependency Updates: Create pages/api/alerts/index.js and pages/api/alerts/[alertId]/index.js. Delete pages/api/posts. Update api-lib/db/comment.js to use alertId. Move comment routes to pages/api/alerts/[alertId]/comments and update validation. Update api-lib/db/user.js deleteUserById to cascade delete alerts.",
+      "status": "pending",
+      "verification_status": "not_started",
+      "recovery_attempts": 0
+    }
+  ],
+  "error_logs": []
+}

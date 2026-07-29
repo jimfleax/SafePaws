@@ -6,6 +6,9 @@ import nc from 'next-connect';
 const handler = nc(ncOpts);
 
 handler.get(async (req, res) => {
+  if (!req.query.userId.match(/^[0-9a-fA-F]{24}$/)) {
+    return res.status(404).end();
+  }
   const db = await getMongoDb();
   const user = await findUserById(db, req.query.userId);
   res.json({ user });

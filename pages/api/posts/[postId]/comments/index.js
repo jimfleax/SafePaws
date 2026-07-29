@@ -1,3 +1,9 @@
+/**
+ * @file index.js
+ * @description API route to handle fetching and creating comments for a specific post.
+ * @architecture Next.js API Route (next-connect)
+ */
+
 import { ValidateProps } from '@/api-lib/constants';
 import { findPostById } from '@/api-lib/db';
 import { findComments, insertComment } from '@/api-lib/db/comment';
@@ -10,6 +16,10 @@ const handler = nc(ncOpts);
 
 handler.get(async (req, res) => {
   const db = await getMongoDb();
+
+  if (!/^[0-9a-fA-F]{24}$/.test(req.query.postId)) {
+    return res.status(404).json({ error: { message: 'Post is not found.' } });
+  }
 
   const post = await findPostById(db, req.query.postId);
 
@@ -44,6 +54,10 @@ handler.post(
 
     const db = await getMongoDb();
 
+    if (!/^[0-9a-fA-F]{24}$/.test(req.query.postId)) {
+      return res.status(404).json({ error: { message: 'Post is not found.' } });
+    }
+
     const content = req.body.content;
 
     const post = await findPostById(db, req.query.postId);
@@ -61,4 +75,8 @@ handler.post(
   }
 );
 
+/**
+ * @function handler
+ * @description Default API route handler
+ */
 export default handler;

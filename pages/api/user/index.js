@@ -1,5 +1,9 @@
 import { ValidateProps } from '@/api-lib/constants';
-import { findUserByUsername, updateUserById, deleteUserById } from '@/api-lib/db';
+import {
+  findUserByUsername,
+  updateUserById,
+  deleteUserById,
+} from '@/api-lib/db';
 import { auths, validateBody } from '@/api-lib/middlewares';
 import { getMongoDb } from '@/api-lib/mongodb';
 import { ncOpts } from '@/api-lib/nc';
@@ -98,7 +102,6 @@ handler.delete(async (req, res) => {
   await req.session.destroy();
   res.status(204).end();
 });
-
 
 export const config = {
   api: {
