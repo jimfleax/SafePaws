@@ -1,12 +1,12 @@
 {
   "status": "running",
-  "current_phase": 1,
+  "current_phase": 2,
   "phases": [
     {
       "id": 1,
       "objective": "Role-Based Access Control (RBAC) Foundation: Add 'role' to ValidateProps.user in api-lib/constants.js. Update insertUser in api-lib/db/user.js to default to 'citizen' and expose role in dbProjectionUsers().",
-      "status": "in_progress",
-      "verification_status": "docs_pass",
+      "status": "completed",
+      "verification_status": "verified",
       "recovery_attempts": 0
     },
     {
