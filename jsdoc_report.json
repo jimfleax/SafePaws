@@ -1,12 +1,14 @@
 {
   "summary": {
-    "totalFiles": 47,
-    "filesWithFileJSDoc": 3,
-    "filesWithFunctionJSDoc": 0,
-    "filesMissingFileJSDoc": 44,
-    "filesMissingFunctionJSDoc": 47
+    "totalFiles": 48,
+    "filesWithFileJSDoc": 5,
+    "filesWithFunctionJSDoc": 2,
+    "filesMissingFileJSDoc": 43,
+    "filesMissingFunctionJSDoc": 46
   },
   "hasFileJSDoc": [
+    "api-lib/constants.js",
+    "api-lib/db/user.js",
     "pages/api/posts/[postId]/comments/[commentId]/index.js",
     "pages/api/posts/[postId]/comments/index.js",
     "pages/api/posts/[postId]/index.js"
@@ -14,12 +16,10 @@
   "missingFileJSDoc": [
     "api-lib/auth/index.js",
     "api-lib/auth/passport.js",
-    "api-lib/constants.js",
     "api-lib/db/comment.js",
     "api-lib/db/index.js",
     "api-lib/db/post.js",
     "api-lib/db/token.js",
-    "api-lib/db/user.js",
     "api-lib/mail.js",
     "api-lib/middlewares/ajv.js",
     "api-lib/middlewares/auth.js",
@@ -37,6 +37,7 @@
     "components/Skeleton/index.js",
     "components/Text/index.js",
     "components/ThemeSwitcher/index.js",
+    "jest.config.js",
     "lib/comment/hooks.js",
     "lib/comment/index.js",
     "lib/default.js",
@@ -57,16 +58,17 @@
     "pages/api/users/[userId]/index.js",
     "pages/api/users/index.js"
   ],
-  "hasFunctionJSDoc": [],
+  "hasFunctionJSDoc": [
+    "api-lib/constants.js",
+    "api-lib/db/user.js"
+  ],
   "missingFunctionJSDoc": [
     "api-lib/auth/index.js",
     "api-lib/auth/passport.js",
-    "api-lib/constants.js",
     "api-lib/db/comment.js",
     "api-lib/db/index.js",
     "api-lib/db/post.js",
     "api-lib/db/token.js",
-    "api-lib/db/user.js",
     "api-lib/mail.js",
     "api-lib/middlewares/ajv.js",
     "api-lib/middlewares/auth.js",
@@ -84,6 +86,7 @@
     "components/Skeleton/index.js",
     "components/Text/index.js",
     "components/ThemeSwitcher/index.js",
+    "jest.config.js",
     "lib/comment/hooks.js",
     "lib/comment/index.js",
     "lib/default.js",
